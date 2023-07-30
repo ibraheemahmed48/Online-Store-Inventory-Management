@@ -5,7 +5,13 @@
 
     <!-- Delete button -->
     <button @click="deleteItem" class="delete-btn">Delete</button>
+    <router-link :to="{ name: 'Item' }">Cancel</router-link>
+
   </div>
+  <div v-if="feedback">
+      <p v-if="feedback.success" class="success">Item deleted successfully!</p>
+      <p v-else class="error">Error: {{ feedback.error }}</p>
+    </div>
 </template>
 
 <script>

@@ -28,6 +28,10 @@
       <!-- Submit button -->
       <button type="submit">Add Item</button>
     </form>
+    <div v-if="feedback">
+      <p v-if="feedback.success" class="success">Item added successfully!</p>
+      <p v-else class="error">Error: {{ feedback.error }}</p>
+    </div>
   </div>
 </template>
 

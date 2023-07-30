@@ -25,6 +25,10 @@
 
       <button type="submit">Save Changes</button>
     </form>
+    <div v-if="feedback">
+      <p v-if="feedback.success" class="success">Item updated successfully!</p>
+      <p v-else class="error">Error: {{ feedback.error }}</p>
+    </div>
   </div>
 </template>
 

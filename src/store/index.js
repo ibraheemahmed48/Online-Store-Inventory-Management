@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
 import firebase from 'firebase/app';
 
+import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -55,6 +55,7 @@ export default new Vuex.Store({
       try {
         await firebase.firestore().collection('items').doc(itemId).delete();
         dispatch('fetchItems');
+        
       } catch (error) {
         console.error('Error deleting item:', error);
       }
